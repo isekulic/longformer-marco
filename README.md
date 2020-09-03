@@ -1,6 +1,6 @@
 # <p align=center>`Longformer for MS MARCO document ranking task`</p>
 
-**\*\*\*\*\* 28. August: fist commit \*\*\*\*\***
+**\*\*\*\*\* 28. August: first commit \*\*\*\*\***
 
 The checkpoints and further instructions on running the code will be updated shortly.
 
