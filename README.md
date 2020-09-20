@@ -23,7 +23,7 @@ For each query, we randomly sample 10 negative documents from the top 100 docume
 
 |       |Dev|Test|
 |-------|---|----|
-|MRR@100|0.3293|0.307|
+|MRR@100|0.3366|0.307|
 
 
 The work is done by [Ivan Sekulic](https://isekulic.github.io/) (Università della Svizzera italiana), [Amir Soleimani](https://asoleimanib.github.io) (University of Amsterdam), [Mohammad Aliannejadi](https://aliannejadi.com/) (University of Amsterdam), and Fabio Crestani (Università della Svizzera italiana).
