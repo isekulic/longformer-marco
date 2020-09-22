@@ -6,7 +6,7 @@ The checkpoints and further instructions on running the code will be updated sho
 
 ## About
 
-We employ [Longformer](https://github.com/allenai/longformer), a BERT-like model for long documents, on the [MS MARCO](https://microsoft.github.io/msmarco/) document re-ranking dataset. 
+We employ [Longformer](https://github.com/allenai/longformer), a BERT-like model for long documents, on the [MS MARCO](https://microsoft.github.io/msmarco/) document re-ranking dataset. More details about our model and experimental setting can be found in our [paper](https://arxiv.org/abs/2009.09392).
 
 ## Learning setting
 
@@ -28,3 +28,15 @@ For each query, we randomly sample 10 negative documents from the top 100 docume
 
 The work is done by [Ivan Sekulic](https://isekulic.github.io/) (Università della Svizzera italiana), [Amir Soleimani](https://asoleimanib.github.io) (University of Amsterdam), [Mohammad Aliannejadi](https://aliannejadi.com/) (University of Amsterdam), and Fabio Crestani (Università della Svizzera italiana).
 
+## Citing
+
+Please consider citing our [paper](https://arxiv.org/abs/2009.09392) if you use our code or models:
+
+    @misc{sekuli2020longformer,
+    title={Longformer for MS MARCO Document Re-ranking Task},
+    author={Ivan Sekulić and Amir Soleimani and Mohammad Aliannejadi and Fabio Crestani},
+    year={2020},
+    eprint={2009.09392},
+    archivePrefix={arXiv},
+    primaryClass={cs.IR}
+    }
