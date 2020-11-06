@@ -1,9 +1,5 @@
 # <p align=center>`Longformer for MS MARCO document ranking task`</p>
 
-**\*\*\*\*\* 28. August: first commit \*\*\*\*\***
-
-The checkpoints and further instructions on running the code will be updated shortly.
-
 ## About
 
 We employ [Longformer](https://github.com/allenai/longformer), a BERT-like model for long documents, on the [MS MARCO](https://microsoft.github.io/msmarco/) document re-ranking dataset. More details about our model and experimental setting can be found in our [paper](https://arxiv.org/abs/2009.09392).
@@ -18,6 +14,19 @@ Due to the computing limitations, the **hyperparameters were not optimised**. We
 ```
 
 For each query, we randomly sample 10 negative documents from the top 100 documents retrieved in the initial retrieval step. 
+
+## Training the model
+
+To train the model, first download all of the necessary data, as described in [data/README.md](data/README.md). File names should match the filenames in [MarcoDataset.py](src/MarcoDataset.py).
+
+You can then train with:
+```
+python run_longformer_marco.py
+```
+You can check all available hyperparameters with:
+```
+python run_longformer_marco.py --help
+```
 
 ## Results
 
