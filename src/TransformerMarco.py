@@ -9,7 +9,7 @@ import pytorch_lightning as pl
 import torch
 import torch.nn.functional as F
 
-from MarcoDataset import MarcoDataset, MarcoPassages
+from MarcoDataset import MarcoDataset
 from IPython import embed
 
 class TransformerMarco(pl.LightningModule):
@@ -25,8 +25,8 @@ class TransformerMarco(pl.LightningModule):
         #super().__init__()
         super(TransformerMarco, self).__init__()
         self.hparams = hparams
-        self.tokenizer = LongformerTokenizer.from_pretrained(f'/users/isekulic/models/{hparams.model_name}')
-        self.model = LongformerForSequenceClassification.from_pretrained(f'/users/isekulic/models/{hparams.model_name}')
+        self.tokenizer = LongformerTokenizer.from_pretrained(hparams.model_name)
+        self.model = LongformerForSequenceClassification.from_pretrained(hparams.model_name)
 
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None

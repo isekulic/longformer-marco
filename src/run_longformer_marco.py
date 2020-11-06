@@ -65,7 +65,7 @@ if __name__=='__main__':
     # MODEL SPECIFIC
     parser.add_argument("--max_seq_len", type=int, default=4096,
                         help="Maximum number of wordpieces of the sequence")
-    parser.add_argument("--lr", type=float, default=3e-6,
+    parser.add_argument("--lr", type=float, default=3e-5,
                         help="Learning rate")
     parser.add_argument("--num_warmup_steps", type=int, default=2500)
     parser.add_argument("--num_training_steps", type=int, default=120000)
@@ -103,7 +103,7 @@ if __name__=='__main__':
     parser.add_argument("--num_nodes", type=int, default=1, help="Num nodes allocated by SLURM")
     parser.add_argument("--distributed_backend", type=str, default='dp',
                         help="Use distributed backend: dp/ddp/ddp2")
-    parser.add_argument("--model_name", type=str, default='longformer-base-4096',
+    parser.add_argument("--model_name", type=str, default='allenai/longformer-base-4096',
                         help="Full name of: bert|albert|longformer")
 
 
