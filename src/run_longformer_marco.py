@@ -77,9 +77,8 @@ if __name__=='__main__':
                         help="Num subprocesses for DataLoader")
 
     # EXPERIMENT SPECIFIC
-    parser.add_argument("--data_dir", type=str, default='~/long-marco/data',)
-    parser.add_argument("--dataset", type=str, default='document',
-                        help="`passage` or `document` re-ranking on MS MARCO")
+    parser.add_argument("--data_dir", type=str, default='../data',)
+
     # effective batch size will be: 
     # trainer_batch_size * data_loader_bs
     parser.add_argument("--trainer_batch_size", type=int, default=5,
@@ -90,7 +89,7 @@ if __name__=='__main__':
                         help='Batch size for validation data loader. If not specified,\
                         --data_loader_bs is used.')
     parser.add_argument("--use_10_percent_of_dev", type=int, default=1,
-                        help='0 to use the full dev dataset, else to use 10% only')
+                        help='0 to use the full dev dataset, else to use 10%% only')
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--slurm_job_id", type=int, default=1)
     parser.add_argument("--use_wandb", type=int, default=0, 

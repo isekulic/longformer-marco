@@ -30,12 +30,7 @@ class TransformerMarco(pl.LightningModule):
 
 
         self.train_dataloader_object = self.val_dataloader_object = self.test_dataloader_object = None
-        if self.hparams.dataset == 'document': # document re-ranking
-            self.DatasetClass = MarcoDataset
-        elif self.hparams.dataset == 'passage': # passage re-ranking
-            self.DatasetClass = MarcoPassages
-        else:
-            raise ValueError('hparams.dataset must be one of: passage|document')
+        self.DatasetClass = MarcoDataset
 
     def forward(self, input_ids, attention_mask, token_type_ids):
 

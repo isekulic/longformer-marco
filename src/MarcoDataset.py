@@ -15,7 +15,7 @@ class MarcoDataset(Dataset):
         self.tokenizer = tokenizer
         self.max_seq_len = max_seq_len
         # load queries
-        self.queries = pd.read_csv(os.path.join(self.data_dir, args.queries),
+        self.queries = pd.read_csv(os.path.join(self.data_dir, f'msmarco-doc{mode}-queries.tsv'),
                                    sep='\t', header=None, names=['qid', 'query_text'], index_col='qid')
         self.relations = pd.read_csv(os.path.join(self.data_dir, f'msmarco-doc{mode}-qrels.tsv'),
                                    sep=' ', header=None, names=['qid', '0', 'did', 'label'])
@@ -62,8 +62,7 @@ class MarcoDataset(Dataset):
         if self.load_documents_mode == 'memory':
             document = self.documents.loc[x.did].doc_text # too slow too big
         elif self.load_documents_mode == 'lookup':
-            doc_file = open('../data/msmarco-docs.tsv', 'r', encoding='utf-8')
-            # doc_file = open(os.path.join(self.data_dir, 'msmarco-docs.tsv'), 'r')
+            doc_file = open(os.path.join(self.data_dir, 'msmarco-docs.tsv'), 'r')
             file_offset = self.doc_seek.loc[x.did].tsv_offset
             doc_file.seek(file_offset, 0)
             line = doc_file.readline()
